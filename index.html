@@ -4,101 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>성우 자동차 - 스카니아 전문 정비 및 판금/도색</title>
+    <meta name="theme-color" content="#0a0a0a">
+    <title>성우자동차 | 스카니아 공식 딜러 및 워크샵</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* 서비스 카드 섹션 디자인 개선 (카드형 UI) */
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 10px;
-        }
-        .card {
-            background-color: #2c2c2c; /* 글씨가 잘 보이도록 어두운 배경으로 변경 */
-            border: 1px solid #555555; /* 테두리를 추가하여 박스 형태 강조 */
-            border-radius: 12px;       /* 모서리를 둥글게 */
-            padding: 30px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* 어두운 배경에 맞는 그림자 */
-            flex: 1 1 280px;           /* 모바일에서 적절히 줄바꿈되도록 너비 설정 */
-            text-align: center;
-            box-sizing: border-box;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px); /* 마우스 올렸을 때 살짝 떠오르는 효과 */
-        }
-    </style>
 </head>
 <body>
 
     <header class="header">
-        <div class="logo">성우 자동차</div>
+        <div class="logo">성우자동차 <span>SCANIA</span></div>
         <nav class="nav-menu">
             <ul>
-                <li><a href="#services">회사소개</a></li>
-                <li><a href="#gallery">수리사례</a></li>
+                <li><a href="#services">핵심역량</a></li>
+                <li><a href="#gallery">작업사례</a></li>
                 <li><a href="#footer">오시는길</a></li>
             </ul>
         </nav>
-        <a href="tel:031-460-2755" class="btn-call-header">사고상담 연결</a>
+        <a href="tel:031-460-2755" class="btn-call-header">정비 및 사고 상담</a>
     </header>
 
     <section id="hero" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>DOWN TIME 최소화,<br><span>운행은 멈추지 않아야 하니까</span></h1>
-            <p>신속·정확 프리미엄 사고수리</p>
-            <p class="sub-desc">차가 멈춰있는 시간이 곧 손실이기에.<br>스카니아, 레미콘, 중장비 등 전문 판금 도색 센터가 차주님의 수익을 가장 먼저 생각합니다.</p>
+            <h2 class="sub-title">스카니아 공식 딜러 · 워크샵</h2>
+            <h1>정확한 진단<br><span>확실한 수리</span></h1>
+            <p class="main-desc">스카니아 공식 워크샵의 검증된 기술력</p>
+            <p class="sub-desc">트랙터, 윙바디부터 대형 특장차까지.<br>어떤 사고라도 완벽하게 복원하여 차주님의 내일 운행을 책임집니다.</p>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2>핵심 정비 서비스</h2>
+        <div class="section-header">
+            <span class="section-tag">전문 정비 분야</span>
+            <h2>압도적인 기술력, 결과로 증명합니다</h2>
+        </div>
         <div class="card-container">
             <div class="card">
-                <div class="card-icon">🛠️</div>
-                <h3>대형차 판금/도색</h3>
-                <p>찌그러진 탑(Cab) 프레임 교정, 열처리 도장 부스 완비 및 사고수리(Accident repairs)</p>
+                <div class="card-number">01</div>
+                <h3>스카니아 전담 정비</h3>
+                <p>스카니아 전용 첨단 진단기 완비<br>100% 순정 부품을 활용한 프리미엄 하체 정비 및 차량 유지보수</p>
             </div>
             <div class="card">
-                <div class="card-icon">⚙️</div>
-                <h3>스카니아 전문/순정 부품</h3>
-                <p>스카니아 워크샵 서비스, 순정 부품 판매, 트럭 및 하체 정비, 타이어 서비스</p>
+                <div class="card-number">02</div>
+                <h3>대형차 판금 및 도색</h3>
+                <p>대형 상용차 전용 열처리 도장 부스 운영<br>전복 사고 차량 캐빈(탑) 및 프레임 정밀 교정 복원</p>
             </div>
             <div class="card">
-                <div class="card-icon">🚜</div>
-                <h3>특장/중장비 수리</h3>
-                <p>유압 및 차체 시스템 서비스, 드럼 용접, 슈트 교체 등 특장 수리</p>
+                <div class="card-number">03</div>
+                <h3>특장차 및 카고 수리</h3>
+                <p>트레일러, 윙바디, 냉동탑차 및 레미콘<br>물류 운송 차량에 최적화된 신속한 유압 장치 및 차체 시스템 수리</p>
             </div>
         </div>
     </section>
 
     <section id="gallery" class="gallery">
-        <h2>완벽한 복원, 결과로 증명합니다</h2>
+        <h2>작업 사례</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
                 <div class="before-after">
                     <div class="image-box before">
-                        <span>수리 전 (Before)</span>
+                        <span>입고 당시</span>
                     </div>
                     <div class="image-box after">
-                        <span>수리 후 (After)</span>
+                        <span>출고 완료</span>
                     </div>
                 </div>
-                <p class="gallery-desc">전복사고로 찌그러진 탑/프레임 완벽 복원</p>
+                <p class="gallery-desc">전복 사고로 파손된 탑 프레임 완벽 복원</p>
             </div>
             <div class="gallery-item">
                 <div class="before-after">
                     <div class="image-box before">
-                        <span>수리 전 (Before)</span>
+                        <span>입고 당시</span>
                     </div>
                     <div class="image-box after">
-                        <span>수리 후 (After)</span>
+                        <span>출고 완료</span>
                     </div>
                 </div>
-                <p class="gallery-desc">스카니아 전면 캐빈 프레임 교정 및 도색</p>
+                <p class="gallery-desc">스카니아 전면 캐빈 정밀 교정 및 도색</p>
             </div>
         </div>
     </section>
@@ -106,20 +88,20 @@
     <footer id="footer" class="footer">
         <div class="footer-content">
             <div class="info-section">
-                <h2>오시는 길 & 문의</h2>
-                <p><strong>상호명:</strong> 성우 자동차 (스카니아 공식 딜러/워크샵)</p>
+                <h2>오시는 길 및 연락처</h2>
+                <p><strong>상호명:</strong> 성우자동차 (스카니아 공식 워크샵)</p>
                 <p><strong>주소:</strong> 경기도 군포시 번영로 82 (한국 복합물류센터 내)</p>
                 <p><strong>영업시간:</strong> 평일 08:30 - 17:30 / 토요일 08:30 - 15:30 (일요일 휴무)</p>
                 <br>
-                <p><strong>대표번호(주간):</strong> 031-460-2755</p>
-                <p><strong>야간/어시스턴스:</strong> 1588-6575</p>
-                <p class="highlight-text">✓ 보험수리 환영 &nbsp;|&nbsp; ✓ 24시간 지원 &nbsp;|&nbsp; ✓ 순정부품 취급</p>
+                <p><strong>대표번호 (주간):</strong> 031-460-2755</p>
+                <p><strong>야간 긴급출동:</strong> 1588-6575</p>
+                <p class="highlight-text">✓ 전 차종 보험수리  |  ✓ 24시간 긴급 지원  |  ✓ 스카니아 순정부품 취급</p>
             </div>
             <div class="map-section">
                 <iframe 
                     width="100%" 
                     height="250" 
-                    style="border:0; border-radius: 8px;" 
+                    style="border:0; border-radius: 4px;" 
                     loading="lazy" 
                     allowfullscreen 
                     src="https://maps.google.com/maps?q=경기도%20군포시%20번영로%2082%20성우자동차&t=&z=15&ie=UTF8&iwloc=&output=embed">
@@ -128,10 +110,14 @@
         </div>
         
         <div class="call-buttons">
-            <a href="tel:031-460-2755" class="btn-call-large primary">📞 주간 정비·상담 전화</a>
-            <a href="tel:1588-6575" class="btn-call-large secondary">🌙 야간 어시스턴스 (1588-6575)</a>
+            <a href="tel:031-460-2755" class="btn-call-large primary">주간 정비·사고 상담 전화걸기</a>
+            <a href="tel:1588-6575" class="btn-call-large secondary">야간 스카니아 어시스턴스 (1588-6575)</a>
         </div>
     </footer>
+
+    <div class="mobile-bottom-bar">
+        <a href="tel:031-460-2755">정비 및 사고 상담 바로 연결하기</a>
+    </div>
 
 </body>
 </html>

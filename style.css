@@ -1,27 +1,31 @@
 html {
     scroll-behavior: smooth;
 }
-/* 기본 설정 및 변수 지정 */
+
+/* 기본 설정 및 변수 지정 (더 깊은 블랙으로 프리미엄 느낌 강조) */
 :root {
-    --bg-dark: #1a1a1a;
-    --bg-card: #2c2c2c;
+    --bg-dark: #0a0a0a; 
+    --bg-card: #141414;
     --primary-yellow: #ffb700;
     --primary-yellow-hover: #e0a100;
-    --text-light: #ffffff;
-    --text-gray: #b3b3b3;
+    --text-light: #f5f5f5;
+    --text-gray: #888888;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+    /* 세련된 웹 폰트(Pretendard) 적용 */
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Apple SD Gothic Neo', sans-serif;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
+    letter-spacing: -0.02em; /* 자간을 살짝 좁혀서 가독성 및 세련미 향상 */
+    padding-bottom: 60px; /* 모바일 하단 고정바 공간 확보 */
 }
 
 a {
@@ -36,18 +40,23 @@ a {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(26, 26, 26, 0.95);
+    background-color: rgba(10, 10, 10, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     z-index: 1000;
-    border-bottom: 2px solid var(--primary-yellow);
+    border-bottom: 1px solid #222; /* 두꺼운 노란선 대신 얇은 다크그레이 선 */
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+.logo span {
     color: var(--primary-yellow);
 }
 
@@ -58,8 +67,9 @@ a {
 }
 
 .nav-menu a {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     transition: color 0.3s;
 }
 
@@ -68,24 +78,28 @@ a {
 }
 
 .btn-call-header {
-    background-color: var(--primary-yellow);
-    color: var(--bg-dark);
-    padding: 8px 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    background-color: transparent;
+    color: var(--primary-yellow);
+    border: 1px solid var(--primary-yellow);
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 0; /* 모서리를 각지게 하여 기계적이고 남성적인 느낌 강조 */
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
 }
 
+.btn-call-header:hover {
+    background-color: var(--primary-yellow);
+    color: var(--bg-dark);
+}
 
 /* 2구역: 메인 비주얼 */
 .hero {
     position: relative;
     height: 100vh;
     min-height: 500px;
-    
-    /* [수정된 부분] 임시 이미지 URL을 'image01.png' 로 변경했습니다. */
     background: url('image01.png') no-repeat center center/cover;
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,38 +119,64 @@ a {
     padding: 20px;
 }
 
+.hero-content h2.sub-title {
+    font-size: 1rem;
+    color: var(--primary-yellow);
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
 .hero-content h1 span {
     color: var(--primary-yellow);
 }
 
-.hero-content p {
+.hero-content p.main-desc {
     font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--primary-yellow);
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 10px;
 }
 
-.hero-content .sub-desc {
+.hero-content p.sub-desc {
     font-size: 1.1rem;
-    font-weight: normal;
     color: var(--text-gray);
+    margin-top: 20px;
+    font-weight: 300;
 }
 
 /* 3구역: 서비스 소개 */
 .services {
-    padding: 80px 20px;
+    padding: 100px 20px;
     text-align: center;
+    background-color: var(--bg-dark);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-tag {
+    font-size: 0.9rem;
+    color: var(--primary-yellow);
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .services h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: var(--primary-yellow);
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 .card-container {
@@ -149,14 +189,24 @@ a {
 
 .card {
     background-color: var(--bg-card);
-    padding: 30px;
-    border-radius: 10px;
-    border-top: 4px solid var(--primary-yellow);
-    transition: transform 0.3s;
+    padding: 40px 30px;
+    border-radius: 4px;
+    border: 1px solid #222;
+    text-align: left; /* 좌측 정렬로 매거진 같은 느낌 부여 */
+    transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-color: var(--primary-yellow);
+}
+
+.card-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #444; /* 배경에 은은하게 묻히는 컬러 */
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
 }
 
 .card-icon {
@@ -165,26 +215,31 @@ a {
 }
 
 .card h3 {
+    font-size: 1.4rem;
+    color: var(--text-light);
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .card p {
     color: var(--text-gray);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 300;
 }
 
 /* 4구역: 작업 갤러리 */
 .gallery {
-    padding: 80px 20px;
-    background-color: #222;
+    padding: 100px 20px;
+    background-color: #0f0f0f;
     text-align: center;
 }
 
 .gallery h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: var(--primary-yellow);
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    font-weight: 700;
 }
 
 .gallery-grid {
@@ -198,7 +253,8 @@ a {
 .gallery-item {
     background-color: var(--bg-card);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid #222;
 }
 
 .before-after {
@@ -210,11 +266,11 @@ a {
 .image-box {
     flex: 1;
     height: 200px;
-    background-color: #444;
+    background-color: #222;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 2px;
     position: relative;
     overflow: hidden;
 }
@@ -223,22 +279,26 @@ a {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    background: rgba(0,0,0,0.6);
-    padding: 3px 8px;
-    font-size: 0.8rem;
-    border-radius: 3px;
+    background: rgba(0,0,0,0.8);
+    color: var(--primary-yellow);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
 .gallery-desc {
-    font-weight: bold;
-    color: var(--primary-yellow);
+    font-weight: 500;
+    color: var(--text-light);
+    font-size: 1.05rem;
 }
 
 /* 5구역: 푸터 및 문의 */
 .footer {
-    padding: 60px 20px 40px;
-    background-color: #111;
+    padding: 80px 20px 60px;
+    background-color: #050505;
     text-align: center;
+    border-top: 1px solid #1a1a1a;
 }
 
 .footer-content {
@@ -246,7 +306,7 @@ a {
     margin: 0 auto 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -260,18 +320,26 @@ a {
 .info-section h2 {
     color: var(--primary-yellow);
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .info-section p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 1rem;
-    color: #ccc;
+    color: #999;
+    font-weight: 300;
+}
+
+.info-section strong {
+    color: #ddd;
+    font-weight: 500;
 }
 
 .highlight-text {
-    color: var(--primary-yellow);
-    font-weight: bold;
-    margin-top: 15px !important;
+    color: var(--primary-yellow) !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+    letter-spacing: 0.05em;
 }
 
 .map-section {
@@ -290,17 +358,17 @@ a {
 .btn-call-large {
     display: block;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+    padding: 18px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
 }
 
 .btn-call-large.primary {
     background-color: var(--primary-yellow);
     color: var(--bg-dark);
-    box-shadow: 0 4px 15px rgba(255, 183, 0, 0.3);
 }
 
 .btn-call-large.primary:hover {
@@ -308,13 +376,19 @@ a {
 }
 
 .btn-call-large.secondary {
-    background-color: #444;
-    color: #fff;
-    border: 1px solid #555;
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid #444;
 }
 
 .btn-call-large.secondary:hover {
-    background-color: #555;
+    border-color: var(--primary-yellow);
+    color: var(--primary-yellow);
+}
+
+/* 모바일 하단 고정 바 (모바일에서만 보임) */
+.mobile-bottom-bar {
+    display: none;
 }
 
 /* 반응형 모바일 최적화 */
@@ -331,10 +405,10 @@ a {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
-    .hero-content p {
+    .hero-content p.main-desc {
         font-size: 1.2rem;
     }
 
@@ -348,5 +422,36 @@ a {
 
     .footer-content {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .info-section {
+        text-align: center;
+    }
+
+    .call-buttons {
+        display: none; /* 하단 바가 있으므로 푸터의 큰 버튼은 숨김 */
+    }
+
+    /* 모바일 하단 고정 바 활성화 */
+    .mobile-bottom-bar {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-yellow);
+        padding: 18px 0;
+        text-align: center;
+        z-index: 9999;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-bottom-bar a {
+        color: var(--bg-dark);
+        font-size: 1.1rem;
+        font-weight: 800;
+        display: block;
+        letter-spacing: 0.05em;
     }
 }
