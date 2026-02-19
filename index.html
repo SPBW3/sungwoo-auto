@@ -6,6 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>성우 자동차 - 스카니아 전문 정비 및 판금/도색</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* 서비스 카드 섹션 디자인 개선 (카드형 UI) */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0; /* 연한 테두리로 영역 구분 */
+            border-radius: 12px;       /* 모서리를 둥글게 */
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* 그림자로 입체감 부여 */
+            flex: 1 1 280px;           /* 모바일에서 적절히 줄바꿈되도록 너비 설정 */
+            text-align: center;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* 마우스 올렸을 때 살짝 떠오르는 효과 */
+        }
+    </style>
 </head>
 <body>
 
