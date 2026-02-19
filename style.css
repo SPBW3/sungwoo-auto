@@ -2,247 +2,171 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 기본 설정 및 변수 지정 (더 깊은 블랙으로 프리미엄 느낌 강조) */
+/* 북유럽 미니멀리즘 + 스카니아 컬러 팔레트 */
 :root {
-    --bg-dark: #0a0a0a; 
-    --bg-card: #141414;
-    --primary-yellow: #ffb700;
-    --primary-yellow-hover: #e0a100;
-    --text-light: #f5f5f5;
-    --text-gray: #888888;
+    --bg-main: #121a23; /* 깊고 고급스러운 다크 네이비 */
+    --bg-card: #1a2530; /* 카드 배경 */
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --scania-blue: #005596;
+    --scania-red: #d6001c;
+    --scania-yellow: #f2c500;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* 세련된 웹 폰트(Pretendard) 적용 */
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Apple SD Gothic Neo', sans-serif;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     line-height: 1.6;
-    letter-spacing: -0.02em; /* 자간을 살짝 좁혀서 가독성 및 세련미 향상 */
-    padding-bottom: 60px; /* 모바일 하단 고정바 공간 확보 */
+    letter-spacing: -0.02em;
+    padding-bottom: 70px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
 }
 
-/* 1구역: 헤더 */
+/* 1. 헤더 */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
-    background-color: rgba(10, 10, 10, 0.95);
+    height: 80px;
+    background-color: rgba(18, 26, 35, 0.9);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 40px;
     z-index: 1000;
-    border-bottom: 1px solid #222; /* 두꺼운 노란선 대신 얇은 다크그레이 선 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: var(--text-light);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
 }
-
 .logo span {
-    color: var(--primary-yellow);
+    color: var(--scania-blue);
 }
 
 .nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px;
 }
-
 .nav-menu a {
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
-
 .nav-menu a:hover {
-    color: var(--primary-yellow);
+    color: var(--scania-yellow);
 }
 
 .btn-call-header {
     background-color: transparent;
-    color: var(--primary-yellow);
-    border: 1px solid var(--primary-yellow);
-    padding: 8px 20px;
+    color: var(--text-primary);
+    border: 1px solid var(--scania-blue);
+    padding: 10px 24px;
     font-weight: 600;
-    font-size: 0.85rem;
-    border-radius: 0; /* 모서리를 각지게 하여 기계적이고 남성적인 느낌 강조 */
-    letter-spacing: 0.05em;
+    font-size: 0.95rem;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
-
 .btn-call-header:hover {
-    background-color: var(--primary-yellow);
-    color: var(--bg-dark);
+    background-color: var(--scania-blue);
 }
 
-/* 2구역: 메인 비주얼 */
+/* 2. 메인 비주얼 (Hero) */
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 500px;
-    background: url('image01.png') no-repeat center center/cover;
+    min-height: 600px;
+    background: url('image_04.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 70px;
+    padding: 0 40px;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    /* 왼쪽을 어둡게 하여 글씨 가독성 확보 */
+    background: linear-gradient(to right, rgba(18, 26, 35, 0.9) 0%, rgba(18, 26, 35, 0.3) 100%);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 20px;
+    max-width: 800px;
 }
 
 .hero-content h2.sub-title {
-    font-size: 1rem;
-    color: var(--primary-yellow);
-    letter-spacing: 0.2em;
+    font-size: 1.1rem;
+    color: var(--scania-yellow);
+    letter-spacing: 0.15em;
     margin-bottom: 20px;
     font-weight: 600;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 900;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    font-size: 4.5rem;
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 30px;
 }
 
 .hero-content h1 span {
-    color: var(--primary-yellow);
+    color: var(--scania-blue);
 }
 
 .hero-content p.main-desc {
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--text-light);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .hero-content p.sub-desc {
     font-size: 1.1rem;
-    color: var(--text-gray);
-    margin-top: 20px;
+    color: var(--text-secondary);
     font-weight: 300;
 }
 
-/* 3구역: 서비스 소개 */
+/* 3. 서비스 섹션 */
 .services {
-    padding: 100px 20px;
-    text-align: center;
-    background-color: var(--bg-dark);
+    padding: 120px 40px;
+    background-color: var(--bg-main);
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
-
 .section-tag {
     font-size: 0.9rem;
-    color: var(--primary-yellow);
+    color: var(--scania-yellow);
     letter-spacing: 0.15em;
     font-weight: 600;
     display: block;
     margin-bottom: 10px;
 }
-
-.services h2 {
-    font-size: 2.2rem;
+.section-header h2 {
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.card {
-    background-color: var(--bg-card);
-    padding: 40px 30px;
-    border-radius: 4px;
-    border: 1px solid #222;
-    text-align: left; /* 좌측 정렬로 매거진 같은 느낌 부여 */
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-yellow);
-}
-
-.card-number {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #444; /* 배경에 은은하게 묻히는 컬러 */
-    margin-bottom: 15px;
-    font-family: Arial, sans-serif;
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-size: 1.4rem;
-    color: var(--text-light);
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-.card p {
-    color: var(--text-gray);
-    font-size: 1rem;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-/* 4구역: 작업 갤러리 */
-.gallery {
-    padding: 100px 20px;
-    background-color: #0f0f0f;
-    text-align: center;
-}
-
-.gallery h2 {
-    font-size: 2.2rem;
-    margin-bottom: 60px;
-    font-weight: 700;
-}
-
-.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
@@ -250,96 +174,124 @@ a {
     margin: 0 auto;
 }
 
-.gallery-item {
+.card {
     background-color: var(--bg-card);
-    padding: 15px;
+    padding: 50px 40px;
     border-radius: 4px;
-    border: 1px solid #222;
+    border-top: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+.card:hover {
+    transform: translateY(-10px);
+    border-top: 2px solid var(--scania-blue);
+    background-color: #1e2b38;
 }
 
-.before-after {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+.card-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
-.image-box {
-    flex: 1;
-    height: 200px;
-    background-color: #222;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-.image-box span {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: rgba(0,0,0,0.8);
-    color: var(--primary-yellow);
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-
-.gallery-desc {
-    font-weight: 500;
-    color: var(--text-light);
+.card p {
+    color: var(--text-secondary);
     font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
-/* 5구역: 푸터 및 문의 */
-.footer {
-    padding: 80px 20px 60px;
-    background-color: #050505;
+/* 4. 역동적 현장 이미지 배너 (Parallax Effect) */
+.featured-banner {
+    position: relative;
+    padding: 150px 40px;
+    background: url('image_01.png') no-repeat center center/cover;
+    background-attachment: fixed; /* 스크롤 시 배경이 고정되는 고급스러운 효과 */
     text-align: center;
-    border-top: 1px solid #1a1a1a;
+}
+
+
+
+.featured-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 어두운 오버레이로 글씨 강조 */
+}
+
+.featured-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.featured-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.featured-content p {
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    font-weight: 400;
+}
+
+/* 5. 푸터 */
+.footer {
+    padding: 100px 40px 40px;
+    background-color: #0b1016;
 }
 
 .footer-content {
-    max-width: 1000px;
-    margin: 0 auto 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
     display: flex;
+    gap: 60px;
     flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
 }
 
 .info-section {
     flex: 1;
     min-width: 300px;
-    text-align: left;
 }
 
-.info-section h2 {
-    color: var(--primary-yellow);
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
     margin-bottom: 20px;
-    font-size: 1.5rem;
+}
+.footer-logo span {
+    color: var(--scania-blue);
 }
 
-.info-section p {
+.address {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+.contact-info p {
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #999;
-    font-weight: 300;
+    color: var(--text-secondary);
 }
-
-.info-section strong {
-    color: #ddd;
-    font-weight: 500;
+.contact-info strong {
+    color: var(--text-primary);
 }
 
 .highlight-text {
-    color: var(--primary-yellow) !important;
-    font-weight: 600 !important;
-    margin-top: 20px !important;
-    letter-spacing: 0.05em;
+    color: var(--scania-yellow) !important;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 .map-section {
@@ -349,109 +301,84 @@ a {
 
 .call-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto 40px;
 }
 
 .btn-call-large {
-    display: block;
-    width: 100%;
+    flex: 1;
+    text-align: center;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 700;
     padding: 18px;
     border-radius: 4px;
-    letter-spacing: 0.05em;
     transition: all 0.3s;
 }
 
 .btn-call-large.primary {
-    background-color: var(--primary-yellow);
-    color: var(--bg-dark);
+    background-color: var(--scania-blue);
+    color: var(--text-primary);
 }
-
 .btn-call-large.primary:hover {
-    background-color: var(--primary-yellow-hover);
+    background-color: #00447a;
 }
 
 .btn-call-large.secondary {
     background-color: transparent;
-    color: var(--text-light);
-    border: 1px solid #444;
+    color: var(--text-primary);
+    border: 1px solid #333;
 }
-
 .btn-call-large.secondary:hover {
-    border-color: var(--primary-yellow);
-    color: var(--primary-yellow);
+    border-color: var(--scania-red);
+    color: var(--scania-red);
 }
 
-/* 모바일 하단 고정 바 (모바일에서만 보임) */
+.copyright {
+    text-align: center;
+    color: #4a5568;
+    font-size: 0.9rem;
+    border-top: 1px solid #1a202c;
+    padding-top: 30px;
+}
+
+/* 모바일 하단 고정 바 */
 .mobile-bottom-bar {
     display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--scania-blue);
+    padding: 18px 0;
+    text-align: center;
+    z-index: 9999;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* 반응형 모바일 최적화 */
+.mobile-bottom-bar a {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
+}
+
+/* 반응형 */
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-        gap: 15px;
-    }
+    .header { height: 70px; padding: 0 20px; }
+    .nav-menu, .btn-call-header { display: none; }
     
-    .nav-menu {
-        display: none;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-content p.main-desc {
-        font-size: 1.2rem;
-    }
-
-    .before-after {
-        flex-direction: column;
-    }
-
-    .image-box {
-        height: 150px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .info-section {
-        text-align: center;
-    }
-
-    .call-buttons {
-        display: none; /* 하단 바가 있으므로 푸터의 큰 버튼은 숨김 */
-    }
-
-    /* 모바일 하단 고정 바 활성화 */
-    .mobile-bottom-bar {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-yellow);
-        padding: 18px 0;
-        text-align: center;
-        z-index: 9999;
-        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .mobile-bottom-bar a {
-        color: var(--bg-dark);
-        font-size: 1.1rem;
-        font-weight: 800;
-        display: block;
-        letter-spacing: 0.05em;
-    }
+    .hero { padding: 0 20px; justify-content: center; text-align: center; }
+    .hero-overlay { background: rgba(18, 26, 35, 0.7); }
+    .hero-content h1 { font-size: 2.8rem; }
+    
+    .services { padding: 80px 20px; }
+    .section-header h2 { font-size: 2rem; }
+    
+    .featured-banner { padding: 100px 20px; background-attachment: scroll; }
+    .featured-content h2 { font-size: 2.2rem; }
+    
+    .footer { padding: 60px 20px; text-align: center; }
+    .call-buttons { display: none; }
+    .mobile-bottom-bar { display: block; }
 }
