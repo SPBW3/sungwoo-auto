@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sw-motors.co.kr/sitemap.xml
