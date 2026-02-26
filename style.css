@@ -382,3 +382,51 @@ a {
     .call-buttons { display: none; }
     .mobile-bottom-bar { display: block; }
 }
+
+
+/* 네이버 지도 섹션 디자인 */
+.naver-map-box {
+    background: #f9f9f9;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.map-address {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 10px 0 20px;
+}
+
+.btn-naver-map {
+    display: inline-block;
+    background-color: #03C75A; /* 네이버 고유 색상 */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-naver-map:hover {
+    background-color: #02a94d;
+    color: white;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #eee url('https://map.naver.com/v5/assets/img/img_logo_naver_maps.png') no-repeat center;
+    background-size: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    color: #888;
+    font-size: 0.85rem;
+}
