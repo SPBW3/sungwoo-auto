@@ -381,14 +381,32 @@ a {
     .hero-overlay {
         background: linear-gradient(to bottom,
             rgba(18, 26, 35, 0.35) 0%,
-            rgba(18, 26, 35, 0.5) 50%,
-            rgba(18, 26, 35, 0.8) 100%);
+            rgba(18, 26, 35, 0.7) 50%,
+            rgba(18, 26, 35, 0.85) 100%);
     }
-    .hero-content { max-width: 100%; }
-    .hero-content h2.sub-title { color: var(--scania-blue); }
-    .hero-content h1 { font-size: 2.2rem; }
-    .hero-content p.main-desc { font-size: 1.2rem; }
-    .hero-content p.sub-desc { font-size: 0.98rem; }
+    .hero-content {
+        max-width: 100%;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+    }
+    .hero-content h2.sub-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+    .hero-content h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+        margin-bottom: 22px;
+    }
+    .hero-content p.main-desc {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    .hero-content p.sub-desc {
+        font-size: 0.95rem;
+        color: #d8dee6;
+    }
 
     .services { padding: 80px 20px; }
     .section-header h2 { font-size: 2rem; }
