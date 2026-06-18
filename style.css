@@ -369,52 +369,30 @@ a {
     .nav-menu, .btn-call-header { display: none; }
     
     .hero {
-        height: auto;
-        min-height: 0;
-        background-image: none;
-        background-color: var(--bg-main);
-        padding: 0;
-        flex-direction: column;
-        align-items: stretch;
+        padding: 0 24px;
+        justify-content: center;
         text-align: center;
+        background-position: 68% center;
     }
-    .hero::before {
-        content: '';
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-image: url('sungwoo_01.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+    .hero-overlay {
+        background: linear-gradient(to bottom,
+            rgba(18, 26, 35, 0.4) 0%,
+            rgba(18, 26, 35, 0.55) 50%,
+            rgba(18, 26, 35, 0.85) 100%);
     }
-    .hero-overlay { display: none; }
-    .hero-content { padding: 50px 24px; max-width: 100%; }
+    .hero-content { max-width: 100%; }
     .hero-content h1 { font-size: 2.4rem; }
     .hero-content p.main-desc { font-size: 1.2rem; }
     .hero-content p.sub-desc { font-size: 0.98rem; }
-    
+
     .services { padding: 80px 20px; }
     .section-header h2 { font-size: 2rem; }
-    
+
     .featured-banner {
-        padding: 0;
-        background-image: none;
-        background-color: var(--bg-main);
+        padding: 100px 20px;
         background-attachment: scroll;
+        background-position: 60% center;
     }
-    .featured-banner::before {
-        content: '';
-        display: block;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-image: url('sungwoo_02.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .featured-overlay { display: none; }
-    .featured-content { padding: 60px 24px; }
     .featured-content h2 { font-size: 2.2rem; }
     .featured-content p { font-size: 1rem; }
     
