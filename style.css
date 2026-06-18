@@ -369,21 +369,25 @@ a {
     .nav-menu, .btn-call-header { display: none; }
     
     .hero {
+        height: auto;
+        aspect-ratio: 1 / 1;
+        min-height: 380px;
+        max-height: 600px;
         padding: 0 24px;
         justify-content: center;
         text-align: center;
-        background-position: 68% center;
+        background-position: 72% center;
     }
     .hero-overlay {
         background: linear-gradient(to bottom,
-            rgba(18, 26, 35, 0.4) 0%,
-            rgba(18, 26, 35, 0.55) 50%,
-            rgba(18, 26, 35, 0.85) 100%);
+            rgba(18, 26, 35, 0.35) 0%,
+            rgba(18, 26, 35, 0.5) 50%,
+            rgba(18, 26, 35, 0.8) 100%);
     }
     .hero-content { max-width: 100%; }
-    .hero-content h1 { font-size: 2.4rem; }
-    .hero-content p.main-desc { font-size: 1.2rem; }
-    .hero-content p.sub-desc { font-size: 0.98rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p.main-desc { font-size: 1.1rem; }
+    .hero-content p.sub-desc { font-size: 0.95rem; }
 
     .services { padding: 80px 20px; }
     .section-header h2 { font-size: 2rem; }
